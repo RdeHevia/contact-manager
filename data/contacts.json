@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "full_name": "Naveed Fida",
+    "email": "nf@example.com",
+    "phone_number": "12345678901",
+    "tags": "work,friend,engineer"
+  },
+  {
+    "id": 2,
+    "full_name": "Victor Reyes",
+    "email": "vpr@example.com",
+    "phone_number": "09876543210",
+    "tags": "work,friend"
+  },
+  {
+    "id": 3,
+    "full_name": "Pete Hanson",
+    "email": "ph@example.com",
+    "phone_number": "54321098761",
+    "tags": null
+  },
+  {
+    "full_name": "Raúl de Hevia",
+    "phone_number": "123",
+    "email": "rdh@gmail.com",
+    "tags": "work,friend,engineer",
+    "id": 4
+  },
+  {
+    "full_name": "paco",
+    "phone_number": "123",
+    "email": "paco@gmail.com",
+    "tags": "work",
+    "id": 5
+  },
+  {
+    "full_name": "juan",
+    "phone_number": "123",
+    "email": "juan@juan.com",
+    "tags": "work",
+    "id": 6
+  },
+  {
+    "full_name": "Ralf",
+    "phone_number": "123",
+    "email": "ralf@ra.com",
+    "tags": "work",
+    "id": 8
+  },
+  {
+    "full_name": "rAmOn",
+    "phone_number": "1234",
+    "email": "ra@mon.com",
+    "tags": "work,friend",
+    "id": 9
+  },
+  {
+    "full_name": "Ramona",
+    "phone_number": "123",
+    "email": "ramona@mona.com",
+    "tags": "work,friend,engineer",
+    "id": 10
+  },
+  {
+    "full_name": "Rc",
+    "phone_number": "888",
+    "email": "paco@gmail.com",
+    "tags": "work",
+    "id": 12
+  },
+  {
+    "full_name": "q",
+    "phone_number": "333",
+    "email": "q@q.com",
+    "tags": "work",
+    "id": 13
+  },
+  {
+    "full_name": "z11",
+    "phone_number": "444412",
+    "email": "z@z12.com",
+    "tags": "friend,engineer",
+    "id": 14
+  },
+  {
+    "full_name": "t4",
+    "phone_number": "661",
+    "email": "t3@t.com",
+    "tags": "friend",
+    "id": 15
+  },
+  {
+    "full_name": "Jennifer",
+    "phone_number": "555",
+    "email": "abc@abc.com",
+    "tags": "friend,HR",
+    "id": 16
+  },
+  {
+    "full_name": "El Gran Wyoming",
+    "phone_number": "3096249821",
+    "email": "lasexta@gmail.com",
+    "tags": "friend",
+    "id": 18
+  }
+]

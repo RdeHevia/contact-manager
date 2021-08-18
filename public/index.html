@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./stylesheets/normalize.css"/>
+  <link rel="stylesheet" href="./stylesheets/style.css"/>
+  <title>Contact Manager</title>
+  <!-- <script src="/javascripts/jquery.js"></script> -->
+  <script src="/javascripts/handlebars.js"></script>
+  <script type="module" src="./javascripts/contact_manager.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Contact Manager</h1>
+    <p>Using Vanilla JavaScript, HTML, CSS and Handlebars</p>
+  </header>
+  <main>
+    <ul id="actions">
+      <li>
+        <a class="add_contact" href="#">Add Contact</a>
+      </li>
+      <li><input type="search" name="search" id="search" placeholder="Search"/></li>
+      <li>
+        <ul id="new_tag">
+          <li><input type="text" name="tag" class="new_tag" placeholder="Tag name"/></li>
+          <li><a href="#" class="new_tag">New tag</a></li>
+        </ul>
+      </li>
+      <li class="tags">
+        <ul id="c_tags_filter" class="tags container" data-template-id="t_tags"></ul>
+      </li>    
+    </ul>
+
+    <form id="contact_form" action="/api/contacts" method="post" class="hidden"
+          data-put-override="false" data-put-action="">
+      <h1>Create Contact</h1>
+      <fieldset>
+        <dl>
+          <dt><label for="full_name">Full name:</label></dt>
+          <dd><input type="text" name="full_name" id="full_name" required/></dd>
+        </dl>
+        <dl>
+          <dt><label for="email">Email address:</label></dt>
+          <dd><input type="email" name="email" id="email" required/></dd>
+        </dl>
+        <dl>
+          <dt><label for="phone_number">Telephone number:</label></dt>
+          <dd><input type="tel" name="phone_number" id="phone_number" required/></dd>
+        </dl>
+      </fieldset>
+      <fieldset class="tags">
+        <div></div>
+        <div></div>
+        <ul id="c_tags_contact_form" class="tags container" data-template-id="t_tags">
+        </ul>
+      </fieldset>
+      <fieldset class="form_buttons">
+        <div></div>
+        <div>
+          <button type="submit">Submit</button>
+          <button id="cancel">Cancel</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <ul id="c_contacts" class="container" data-template-id="t_contacts">
+        <li id="no_contacts" class="hidden">
+          <h2>There is no contacts</h2>
+          <a class="add_contact" href="#">Add Contact</a>
+        </li>
+    </ul>
+  </main>
+
+
+  <script id="t_contacts" type="text/x-handlebars">
+    {{#each contacts}}
+      {{> t_contact}}
+    {{/each}}
+  </script>
+
+  <script id="t_contact" type="text/x-handlebars">
+    <li class="contact" data-contact-id="{{id}}">
+      {{> t_contact_innerHTML}}
+    </li>
+  </script>
+
+  <script id="t_contact_innerHTML" type="text/x-handlebars">
+    <h2 class="contact_name">{{full_name}}</h2>
+    <dl class="contact_info">
+      <dt>Phone Number:</dt>
+      <dd>{{phone_number}}</dd>
+      <dt>Email:</dt>
+      <dd>{{email}}</dd>
+      <dt>Tags:</dt>
+      <dd>{{tags}}</dd>
+    </dl>
+    <ul class="contact_buttons">
+      <li><a href="/api/contacts/{{id}}" data-method="PUT">Edit</a></li>
+      <li><a href="/api/contacts/{{id}}" data-method="DELETE">Delete</a></li>
+    </ul>
+  </script>
+
+  <script id="t_tags" type="text/x-handlebars">
+      {{#each tags}}
+        {{> t_tag}}
+      {{/each}}
+  </script>
+  <script id="t_tag" type="text/x-handlebars">
+    <li data-tag-id="{{name}}"><label><input type="checkbox" name="tag" value="{{name}}"/>{{name}}</label></li>
+  </script>
+</body>
+</html>
